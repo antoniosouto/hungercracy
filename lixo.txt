@@ -1,0 +1,508 @@
+Initialized native services in: C:\Users\Antonio\.gradle\native
+Found daemon DaemonInfo{pid=31124, address=[d3a15c51-f2b2-4b05-96e9-3e323673d453 port:51724, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], state=Idle, lastBusy=1487361399896, context=DefaultDaemonContext[uid=f4d10f72-a201-4c4c-8338-07b07df57418,javaHome=C:\Program Files\Java\jre1.8.0_111,daemonRegistryDir=C:\Users\Antonio\.gradle\daemon,pid=31124,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=windows-1252,-Duser.country=BR,-Duser.language=pt,-Duser.variant]} however its context does not match the desired criteria.
+Java home is different.
+Wanted: DefaultDaemonContext[uid=null,javaHome=C:\Program Files\Java\jdk1.8.0_65,daemonRegistryDir=C:\Users\Antonio\.gradle\daemon,pid=27620,idleTimeout=null,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=windows-1252,-Duser.country=BR,-Duser.language=pt,-Duser.variant]
+Actual: DefaultDaemonContext[uid=f4d10f72-a201-4c4c-8338-07b07df57418,javaHome=C:\Program Files\Java\jre1.8.0_111,daemonRegistryDir=C:\Users\Antonio\.gradle\daemon,pid=31124,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=windows-1252,-Duser.country=BR,-Duser.language=pt,-Duser.variant]
+
+  Looking for a different daemon...
+Connected to daemon DaemonInfo{pid=31152, address=[fb4d8aba-b427-40ef-828c-64e7f2b6476d port:55978, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], state=Idle, lastBusy=1487364971645, context=DefaultDaemonContext[uid=51c0e217-ef09-4d46-9eba-40024d9e66be,javaHome=C:\Program Files\Java\jdk1.8.0_65,daemonRegistryDir=C:\Users\Antonio\.gradle\daemon,pid=31152,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=windows-1252,-Duser.country=BR,-Duser.language=pt,-Duser.variant]}. Dispatching request Build{id=2bcae6b2-e56d-4b0d-bad5-b3a4b92998a8.1, currentDir=C:\Users\Antonio\workspace\hungercracy}.
+Received result org.gradle.launcher.daemon.protocol.BuildStarted@436c81a3 from daemon DaemonInfo{pid=31152, address=[fb4d8aba-b427-40ef-828c-64e7f2b6476d port:55978, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], state=Idle, lastBusy=1487364971645, context=DefaultDaemonContext[uid=51c0e217-ef09-4d46-9eba-40024d9e66be,javaHome=C:\Program Files\Java\jdk1.8.0_65,daemonRegistryDir=C:\Users\Antonio\.gradle\daemon,pid=31152,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=windows-1252,-Duser.country=BR,-Duser.language=pt,-Duser.variant]} (build should be starting).
+The client will now receive all logging from the daemon (pid: 31152). The daemon log file: C:\Users\Antonio\.gradle\daemon\3.3\daemon-31152.out.log
+Starting 51st build in daemon [uptime: 3 hrs 12 mins 4.189 secs, performance: 99%, no major garbage collections]
+Executing build with daemon context: DefaultDaemonContext[uid=51c0e217-ef09-4d46-9eba-40024d9e66be,javaHome=C:\Program Files\Java\jdk1.8.0_65,daemonRegistryDir=C:\Users\Antonio\.gradle\daemon,pid=31152,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=windows-1252,-Duser.country=BR,-Duser.language=pt,-Duser.variant]
+Creating new cache for plugin-use-metadata, path C:\Users\Antonio\.gradle\caches\3.3\plugin-resolution\plugin-use-metadata.bin, access org.gradle.cache.internal.DefaultCacheAccess@49c0e139
+Creating new cache for client-status, path C:\Users\Antonio\.gradle\caches\3.3\plugin-resolution\client-status.bin, access org.gradle.cache.internal.DefaultCacheAccess@49c0e139
+Starting Build
+Settings evaluated using settings file 'C:\master\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\Antonio\workspace\hungercracy\build.gradle'.
+Included projects: [root project 'hungercracy']
+Evaluating root project 'hungercracy' using build file 'C:\Users\Antonio\workspace\hungercracy\build.gradle'.
+Creating new cache for metadata-2.23/module-metadata, path C:\Users\Antonio\.gradle\caches\modules-2\metadata-2.23\module-metadata.bin, access org.gradle.cache.internal.DefaultCacheAccess@50aebeb0
+Creating new cache for metadata-2.23/artifact-at-repository, path C:\Users\Antonio\.gradle\caches\modules-2\metadata-2.23\artifact-at-repository.bin, access org.gradle.cache.internal.DefaultCacheAccess@50aebeb0
+Using 4 worker leases.
+Applying dependency management to configuration 'archives' in project 'hungercracy'
+Applying dependency management to configuration 'compile' in project 'hungercracy'
+Applying dependency management to configuration 'compileClasspath' in project 'hungercracy'
+Applying dependency management to configuration 'compileOnly' in project 'hungercracy'
+Applying dependency management to configuration 'default' in project 'hungercracy'
+Applying dependency management to configuration 'runtime' in project 'hungercracy'
+Applying dependency management to configuration 'testCompile' in project 'hungercracy'
+Applying dependency management to configuration 'testCompileClasspath' in project 'hungercracy'
+Applying dependency management to configuration 'testCompileOnly' in project 'hungercracy'
+Applying dependency management to configuration 'testRuntime' in project 'hungercracy'
+Configuring agent
+All projects evaluated.
+Selected primary task 'build' from project :
+Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':findMainClass', task ':jar', task ':bootRepackage', task ':assemble', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':check', task ':build']
+Creating new cache for fileHashes, path C:\Users\Antonio\workspace\hungercracy\.gradle\3.3\taskArtifacts\fileHashes.bin, access org.gradle.cache.internal.DefaultCacheAccess@8f1135c
+In-memory cache of C:\Users\Antonio\workspace\hungercracy\.gradle\3.3\taskArtifacts\fileHashes.bin: Size{138}, CacheStats{hitCount=10219, missCount=293, loadSuccessCount=293, loadExceptionCount=0, totalLoadTime=185699741, evictionCount=0}
+Creating new cache for fileSnapshots, path C:\Users\Antonio\workspace\hungercracy\.gradle\3.3\taskArtifacts\fileSnapshots.bin, access org.gradle.cache.internal.DefaultCacheAccess@8f1135c
+In-memory cache of C:\Users\Antonio\workspace\hungercracy\.gradle\3.3\taskArtifacts\fileSnapshots.bin: Size{135}, CacheStats{hitCount=314, missCount=25, loadSuccessCount=25, loadExceptionCount=0, totalLoadTime=29707525, evictionCount=0}
+Creating new cache for taskArtifacts, path C:\Users\Antonio\workspace\hungercracy\.gradle\3.3\taskArtifacts\taskArtifacts.bin, access org.gradle.cache.internal.DefaultCacheAccess@8f1135c
+In-memory cache of C:\Users\Antonio\workspace\hungercracy\.gradle\3.3\taskArtifacts\taskArtifacts.bin: Size{6}, CacheStats{hitCount=149, missCount=12, loadSuccessCount=12, loadExceptionCount=0, totalLoadTime=346240226, evictionCount=0}
+:compileJava (Thread[Daemon worker Thread 28,5,main]) started.
+:compileJava
+Putting task artifact state for task ':compileJava' into context took 0.001 secs.
+Task :compileJava class loader hash: 01d9458a7e5b59caccdb01424c57a842
+Task :compileJava actions class loader hash: a9965f0d31dba687bd4c03d6b0a6cd51
+Resolving dependency management for configuration 'compileClasspath' of project 'hungercracy'
+Resolving dependency management for configuration 'compileOnly' of project 'hungercracy'
+Resolving dependency management for configuration 'compile' of project 'hungercracy'
+Resolving global dependency management for project 'hungercracy'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+Excluding [commons-logging:commons-logging]
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+Skipping task ':compileJava' as it is up-to-date (took 0.798 secs).
+:compileJava UP-TO-DATE
+:compileJava (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.803 secs.
+:processResources (Thread[Daemon worker Thread 28,5,main]) started.
+:processResources
+Putting task artifact state for task ':processResources' into context took 0.001 secs.
+Task :processResources class loader hash: 01d9458a7e5b59caccdb01424c57a842
+Task :processResources actions class loader hash: e73b7abdd73d9346265974d08e88519c
+Skipping task ':processResources' as it is up-to-date (took 0.021 secs).
+:processResources UP-TO-DATE
+:processResources (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.028 secs.
+:classes (Thread[Daemon worker Thread 28,5,main]) started.
+:classes
+Skipping task ':classes' as it has no actions.
+:classes UP-TO-DATE
+:classes (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.002 secs.
+:findMainClass (Thread[Daemon worker Thread 28,5,main]) started.
+:findMainClass
+Putting task artifact state for task ':findMainClass' into context took 0.0 secs.
+Executing task ':findMainClass' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+Computed main class: hungercracy.Application
+Found main: hungercracy.Application
+:findMainClass (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.007 secs.
+:jar (Thread[Daemon worker Thread 28,5,main]) started.
+:jar
+Putting task artifact state for task ':jar' into context took 0.001 secs.
+Task :jar class loader hash: 01d9458a7e5b59caccdb01424c57a842
+Task :jar actions class loader hash: e73b7abdd73d9346265974d08e88519c
+Executing task ':jar' (up-to-date check took 0.263 secs) due to:
+  Output property 'archivePath' file C:\Users\Antonio\workspace\hungercracy\build\libs\hc-0.1.0.jar has changed.
+:jar (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.545 secs.
+:bootRepackage (Thread[Daemon worker Thread 28,5,main]) started.
+:bootRepackage
+Putting task artifact state for task ':bootRepackage' into context took 0.0 secs.
+Executing task ':bootRepackage' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+Setting mainClass: hungercracy.Application
+Resolving dependency management for configuration 'runtime' of project 'hungercracy'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+Excluding []
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+:bootRepackage (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.599 secs.
+:assemble (Thread[Daemon worker Thread 28,5,main]) started.
+:assemble
+Skipping task ':assemble' as it has no actions.
+:assemble (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.0 secs.
+:compileTestJava (Thread[Daemon worker Thread 28,5,main]) started.
+:compileTestJava
+Putting task artifact state for task ':compileTestJava' into context took 0.001 secs.
+Task :compileTestJava class loader hash: 01d9458a7e5b59caccdb01424c57a842
+Task :compileTestJava actions class loader hash: a9965f0d31dba687bd4c03d6b0a6cd51
+Resolving dependency management for configuration 'testCompileClasspath' of project 'hungercracy'
+Resolving dependency management for configuration 'testCompileOnly' of project 'hungercracy'
+Resolving dependency management for configuration 'testCompile' of project 'hungercracy'
+Using version '4.12' for dependency 'junit:junit:'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:2.7.7'
+Using version '1.6.6' for dependency 'org.powermock:powermock-api-mockito:1.6.6'
+Using version '1.6.6' for dependency 'org.powermock:powermock-module-junit4:1.6.6'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '1.3' for dependency 'org.hamcrest:hamcrest-core:1.3'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:1.10.19'
+Using version '4.12' for dependency 'junit:junit:4.12'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.21.0-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+Excluding []
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '4.12' for dependency 'junit:junit:'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:2.7.7'
+Using version '1.6.6' for dependency 'org.powermock:powermock-api-mockito:1.6.6'
+Using version '1.6.6' for dependency 'org.powermock:powermock-module-junit4:1.6.6'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.3' for dependency 'org.hamcrest:hamcrest-core:1.3'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:1.10.19'
+Using version '4.12' for dependency 'junit:junit:4.12'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.21.0-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+Executing task ':compileTestJava' (up-to-date check took 0.303 secs) due to:
+  Output property 'destinationDir' file C:\Users\Antonio\workspace\hungercracy\build\classes\test\hungercracy\UserTest.class has been removed.
+All input files are considered out-of-date for incremental task ':compileTestJava'.
+Compiling with JDK Java compiler API.
+:compileTestJava (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.607 secs.
+:processTestResources (Thread[Daemon worker Thread 28,5,main]) started.
+:processTestResources
+Putting task artifact state for task ':processTestResources' into context took 0.001 secs.
+file or directory 'C:\Users\Antonio\workspace\hungercracy\src\test\resources', not found
+Skipping task ':processTestResources' as it has no source files and no previous output files.
+:processTestResources UP-TO-DATE
+:processTestResources (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.005 secs.
+:testClasses (Thread[Daemon worker Thread 28,5,main]) started.
+:testClasses
+Skipping task ':testClasses' as it has no actions.
+:testClasses (Thread[Daemon worker Thread 28,5,main]) completed. Took 0.001 secs.
+:test (Thread[Daemon worker Thread 28,5,main]) started.
+:test
+Putting task artifact state for task ':test' into context took 0.023 secs.
+Task :test class loader hash: 01d9458a7e5b59caccdb01424c57a842
+Task :test actions class loader hash: 18198991b357e4282b88db10fdb1e992
+Resolving dependency management for configuration 'testRuntime' of project 'hungercracy'
+Using version '4.12' for dependency 'junit:junit:'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:2.7.7'
+Using version '1.6.6' for dependency 'org.powermock:powermock-api-mockito:1.6.6'
+Using version '1.6.6' for dependency 'org.powermock:powermock-module-junit4:1.6.6'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '1.3' for dependency 'org.hamcrest:hamcrest-core:1.3'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:1.10.19'
+Using version '4.12' for dependency 'junit:junit:4.12'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.21.0-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+Excluding []
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-devtools:'
+Using version '4.12' for dependency 'junit:junit:'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:2.7.7'
+Using version '1.6.6' for dependency 'org.powermock:powermock-api-mockito:1.6.6'
+Using version '1.6.6' for dependency 'org.powermock:powermock-module-junit4:1.6.6'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-web:1.5.1.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf-spring4:2.1.5.RELEASE'
+Using version '1.4.0' for dependency 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot:1.5.1.RELEASE'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-autoconfigure:1.5.1.RELEASE'
+Using version '1.3' for dependency 'org.hamcrest:hamcrest-core:1.3'
+Using version '2.7.7' for dependency 'org.mockito:mockito-core:1.10.19'
+Using version '4.12' for dependency 'junit:junit:4.12'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-logging:1.5.1.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-core:4.3.6.RELEASE'
+Using version '1.17' for dependency 'org.yaml:snakeyaml:1.17'
+Using version '1.5.1.RELEASE' for dependency 'org.springframework.boot:spring-boot-starter-tomcat:1.5.1.RELEASE'
+Using version '5.3.4.Final' for dependency 'org.hibernate:hibernate-validator:5.3.4.Final'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-web:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-webmvc:4.3.6.RELEASE'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.5.RELEASE'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.6.6'
+Using version '2.4.7' for dependency 'org.codehaus.groovy:groovy:2.4.3'
+Using version '2.1.5.RELEASE' for dependency 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-context:4.3.6.RELEASE'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-classic:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:jcl-over-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:jul-to-slf4j:1.7.22'
+Using version '1.7.22' for dependency 'org.slf4j:log4j-over-slf4j:1.7.22'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-core:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-el:8.5.11'
+Using version '8.5.11' for dependency 'org.apache.tomcat.embed:tomcat-embed-websocket:8.5.11'
+Using version '1.1.0.Final' for dependency 'javax.validation:validation-api:1.1.0.Final'
+Using version '3.3.0.Final' for dependency 'org.jboss.logging:jboss-logging:3.3.0.Final'
+Using version '1.3.3' for dependency 'com.fasterxml:classmate:1.3.1'
+Using version '2.8.0' for dependency 'com.fasterxml.jackson.core:jackson-annotations:2.8.0'
+Using version '2.8.6' for dependency 'com.fasterxml.jackson.core:jackson-core:2.8.6'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-aop:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-beans:4.3.6.RELEASE'
+Using version '4.3.6.RELEASE' for dependency 'org.springframework:spring-expression:4.3.6.RELEASE'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.16.1-GA'
+Using version '3.21.0-GA' for dependency 'org.javassist:javassist:3.21.0-GA'
+Using version '1.1.9' for dependency 'ch.qos.logback:logback-core:1.1.9'
+Using version '1.7.22' for dependency 'org.slf4j:slf4j-api:1.7.22'
+Executing task ':test' (up-to-date check took 0.116 secs) due to:
+  Output property 'binResultsDir' file C:\Users\Antonio\workspace\hungercracy\build\test-results\test\binary\results.bin has changed.
+  Output property 'reports.enabledDirectoryReportDestinations.html' file C:\Users\Antonio\workspace\hungercracy\build\reports\tests\test\classes\hungercracy.UserTest.html has changed.
+  Output property 'reports.enabledDirectoryReportDestinations.html' file C:\Users\Antonio\workspace\hungercracy\build\reports\tests\test\index.html has changed.
+Starting process 'Gradle Test Executor 1'. Working directory: C:\Users\Antonio\workspace\hungercracy Command: C:\Program Files\Java\jdk1.8.0_65\bin\java.exe -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Dfile.encoding=windows-1252 -Duser.country=BR -Duser.language=pt -Duser.variant -ea -cp C:\Users\Antonio\.gradle\caches\3.3\workerMain\gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+Successfully started process 'Gradle Test Executor 1'
+Initialized native services in: C:\Users\Antonio\.gradle\native
+Gradle Test Executor 1 started executing tests.
+Gradle Test Executor 1 finished executing tests.
+
+hungercracy.UserTest > voteTest FAILED
+    java.lang.NullPointerException
+        at hungercracy.UserTest.voteTest(UserTest.java:43)
+
+3 tests completed, 1 failed
+Finished generating test XML results (0.005 secs) into: C:\Users\Antonio\workspace\hungercracy\build\test-results\test
+Generating HTML test report...
+Finished generating test html results (0.009 secs) into: C:\Users\Antonio\workspace\hungercracy\build\reports\tests\test
+:test FAILED
+:test (Thread[Daemon worker Thread 28,5,main]) completed. Took 2.115 secs.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///C:/Users/Antonio/workspace/hungercracy/build/reports/tests/test/index.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 9.498 secs
+Stopped 0 worker daemon(s).
+Received result Failure[value=org.gradle.initialization.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Execution failed for task ':test'.] from daemon DaemonInfo{pid=31152, address=[fb4d8aba-b427-40ef-828c-64e7f2b6476d port:55978, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], state=Idle, lastBusy=1487364971645, context=DefaultDaemonContext[uid=51c0e217-ef09-4d46-9eba-40024d9e66be,javaHome=C:\Program Files\Java\jdk1.8.0_65,daemonRegistryDir=C:\Users\Antonio\.gradle\daemon,pid=31152,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=windows-1252,-Duser.country=BR,-Duser.language=pt,-Duser.variant]} (build should be done).

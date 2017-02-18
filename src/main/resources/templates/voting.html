@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Restaurant Voting Server</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:include="fragments/js :: jquerys"></div>
+<script src="js/voting.js"></script>
+<form action="voting.html" method="POST">
+	Insira o seu nome de usuario: <input type="text" name="username"></input><br></br>
+	Selecione um Restaurante:
+	<select name="restaurantName">
+      <option th:each="restaurant : ${restaurants}"
+      th:value="${restaurant.name}" th:text="${restaurant.name}" ></option>
+    </select>
+    <br></br>
+    <input type="submit" value="Vote"></input>
+</form>
+	<input id="voteResultOk" name="voteResultOk" type="hidden" th:value="${voteResultOk}"></input>
+	<p style="visibility:hidden" th:text="${voteResultMessage} + ${restaurantName} + '!'" />
+<!--	<table>
+      <tr>
+        <th>Nome do Restaurante</th>
+        <th>Clique para votar</th>
+      </tr>
+      <tr th:each="restaurant : ${restaurants}">
+        <td th:text="${restaurant.name}">nome do restaurante</td>
+        <td th:text="Vote"></td>
+      </tr>
+    </table>
+-->    
+
+</body>
+</html>
