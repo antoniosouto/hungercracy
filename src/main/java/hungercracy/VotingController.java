@@ -44,7 +44,7 @@ public class VotingController {
 			}
 		}
 		
-		model.addAttribute("restaurants", restaurantService.getAllRestaurants());
+		model.addAttribute("restaurants", restaurantService.getAllRestaurantsNotYetChoosenThisWeek());
 		return "voting";
 	}
 

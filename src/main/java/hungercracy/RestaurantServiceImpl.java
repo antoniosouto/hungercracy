@@ -27,6 +27,12 @@ public class RestaurantServiceImpl implements RestaurantService{
 		return restaurantRepository.findOne(id);
 	}
 	
+	public List<Restaurant> getAllRestaurantsNotYetChoosenThisWeek() {
+		List<Restaurant> restList = getAllRestaurants();
+		restList.removeIf(rest -> rest.notYetChoosenThisWeek()); // Java 8
+		return restList;
+	}
+	
 	
 
 }

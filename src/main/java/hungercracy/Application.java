@@ -39,4 +39,28 @@ public class Application {
 			log.info("");
 		};
 	}
+	
+	@Bean
+	public CommandLineRunner demo2(RestaurantRepository restaurantRepository) {
+		return (args) -> {
+			Restaurant restaurantWonToday = new Restaurant("Churrascaria Sangue na Blusa", getCurrentZonedLocalDate());
+			Restaurant restaurantWonLAstWeek = new Restaurant("Alfacinha", getCurrentZonedLocalDateMinusDays(1));
+			Restaurant restaurantWonLAstWeek2 = new Restaurant("Alfacinha2", getCurrentZonedLocalDateMinusDays(4));
+			Restaurant restaurantWonLAstWeek3 = new Restaurant("Alfacinha3", getCurrentZonedLocalDateMinusDays(7));
+			
+			restaurantRepository.deleteAll();
+			restaurantRepository.save(restaurantWonToday);
+			restaurantRepository.save(restaurantWonLAstWeek);
+			restaurantRepository.save(restaurantWonLAstWeek2);
+			restaurantRepository.save(restaurantWonLAstWeek3);
+			
+			// fetch all customers
+			log.info("Customers found with findAll():");
+			log.info("-------------------------------");
+			for (Restaurant restaurant : restaurantRepository.findAll()) {
+				log.info(restaurant.toString());
+			}
+			log.info("");
+		};
+	}
 }

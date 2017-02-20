@@ -18,14 +18,9 @@ public class User {
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    //@Column(name="id")
     private Long id;
-	//@Column(name="local_date")
-	//@Temporal(TemporalType.DATE)
-	//private LocalDate lastVotingDate/* = LocalDate.of(2000, Month.DECEMBER, 25)*/;
-	private Date lastVotingDate = Date.valueOf("2000-12-25");
-	//@Column(name="name")
 	private String name;
+	private Date lastVotingDate = Date.valueOf("2000-12-25");
 	
 	protected User() {}
 	
