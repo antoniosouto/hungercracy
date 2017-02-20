@@ -1,11 +1,13 @@
 package hungercracy;
 
-public class UsersRepository {
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+
+public interface UserRepository  extends CrudRepository<User, Long>{
 	
-	/* Get data from DB
-	 * hardcoded data instead of fetching from DB by now.
-	 * */
-	public User getByName(String name) throws RuntimeException {
+	/*public User getByName(String name) {
 		//TODO: fetch from database
 		if (name.equals("Antonio")) { // Antonio voted today
 			return new User(name, DateTimeUtil.getCurrentZonedLocalDate());
@@ -14,9 +16,14 @@ public class UsersRepository {
 		} else {
 			throw new RuntimeException("Usuario nao encontrado no banco de dados!");
 		}
-	}
+	}*/
 	
-	public void updateUser(User user) throws RuntimeException {
+	/*public void updateUser(User user) throws RuntimeException {
 		//TODO: persist
-	}
+	}*/
+	
+	User findByName(String name);
+	User findById(Long id);
+	List<User> findAll();
+	
 }

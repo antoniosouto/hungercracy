@@ -4,10 +4,13 @@ import static hungercracy.DateTimeUtil.getCurrentZonedLocalDateMinusDays;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import hungercracy.User;
 
@@ -21,6 +24,8 @@ public class UserTest {
 	@Mock
 	private UsersRepository usersRepository;
 	*/
+	@Autowired
+	private UserService userService;
 	
     @Before
     public void setUp() throws Exception {
@@ -32,7 +37,6 @@ public class UserTest {
 		User mockedUserJustVoted = new User("Just Voted", getCurrentZonedLocalDate());
 		User mockedUserVotedYesterday = new User("Voted Yesterday", getCurrentZonedLocalDateMinusDays(1));
 		User mockedUserNeverVoted = new User("Never Voted");
-		User mockedUserNeverVoted2 = new User("Never Voted 2", null);
 		/*
 		when(usersRepository.getByName("Just Voted")).thenReturn(mockedUserJustVoted);
 		when(usersRepository.getByName("Voted Yesterday")).thenReturn(mockedUserVotedYestaerday);
@@ -66,33 +70,11 @@ public class UserTest {
 		}
 		
 		try {
-			assertTrue(mockedUserNeverVoted.getLastVotingDate() == null);
+			assertTrue(mockedUserNeverVoted.getLastVotingDate().isEqual(LocalDate.of(2000, Month.DECEMBER, 25)));
 			mockedUserNeverVoted.vote("restaurant name");
 			assertTrue(mockedUserNeverVoted.getLastVotingDate().isEqual(getCurrentZonedLocalDate()));
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
-		try {
-			assertTrue(mockedUserNeverVoted2.getLastVotingDate() == null);
-			mockedUserNeverVoted2.vote("restaurant name");
-			assertTrue(mockedUserNeverVoted.getLastVotingDate().isEqual(getCurrentZonedLocalDate()));
-		} catch (Exception e) {
-			Assert.fail();
-		}
-	
-		
-
 	}
-	
-	@Test 
-	public void test1() {
-	 assertTrue(true);
-	}
-	
-	@Test 
-	public void test2() {
-	 assertTrue(true);
-	}
-	
 }

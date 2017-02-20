@@ -15,6 +15,7 @@ apply plugin: 'org.springframework.boot'
 
 repositories {
 	mavenCentral()
+	 maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
 	//jcenter()
 }
 
@@ -25,6 +26,8 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.springframework.boot:spring-boot-starter-web")
 	compile("org.springframework.boot:spring-boot-devtools")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.h2database:h2")
 
 	testCompile("junit:junit")
 	testCompile("org.mockito:mockito-core:2.7.7")
