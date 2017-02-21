@@ -1,5 +1,6 @@
 package hungercracy;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,19 @@ public class RestaurantServiceImpl implements RestaurantService{
 	
 	public List<Restaurant> getAllRestaurantsNotYetChoosenThisWeek() {
 		List<Restaurant> restList = getAllRestaurants();
-		restList.removeIf(rest -> rest.notYetChoosenThisWeek()); // Java 8
+		for (Iterator<Restaurant> iter = restList.listIterator(); iter.hasNext(); ) {
+			Restaurant restaurant = iter.next();
+			if (restaurant.alreadyChoosenThisWeek() && !restaurant.isWinner()) {
+				iter.remove();
+				}
+			}
 		return restList;
 	}
 	
-	
-
+	public List<Restaurant> getAllRestaurantsNotYetChoosenThisWeekSortedByNameAndByVotes() {
+		List<Restaurant> restList = getAllRestaurantsNotYetChoosenThisWeek();
+		restList.sort((a,b)->a.getName().compareTo(b.getName()));
+		restList.sort(((a,b)->b.getVotes()-a.getVotes())); //reversed order
+		return restList;
+	}
 }

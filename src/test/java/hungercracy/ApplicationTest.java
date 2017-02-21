@@ -3,29 +3,25 @@
  */
 package hungercracy;
 
-import org.junit.Before;
-/**
- * @author Antonio
- *
- */
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import static org.mockito.Mockito.when;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import static hungercracy.DateTimeUtil.getCurrentZonedLocalDate;
 import static hungercracy.DateTimeUtil.getCurrentZonedLocalDateMinusDays;
 import static org.hamcrest.Matchers.containsString;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
+
+import org.junit.Assert;
+import org.junit.Before;
+/**
+ * @author Antonio
+ *
+ */
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,34 +35,39 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 public class ApplicationTest {
 	
-	private static final Logger log = LoggerFactory.getLogger(Application.class);
-
+	@Autowired
+	private VotingController vc;
+	
+	private User mockedUserJustVoted;
+	private User mockedUserVotedYesterday;
+	private User mockedUserNeverVoted;
+	private Restaurant mockedRestaurant1;
+	
 	//@Mock
 
 
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	RestaurantRepository restaurantRepository;
+	
 	
     @Autowired
     private MockMvc mockMvc;
 
     @Before
     public void setup() {
-    	User mockedUserJustVoted = new User("Just Voted", getCurrentZonedLocalDate());
-		User mockedUserVotedYesterday = new User("Voted Yesterday", getCurrentZonedLocalDateMinusDays(1));
-		User mockedUserNeverVoted = new User("Never Voted");
+    	mockedUserJustVoted = new User("Just Voted", getCurrentZonedLocalDate());
+		mockedUserVotedYesterday = new User("Voted Yesterday", getCurrentZonedLocalDateMinusDays(1));
+		mockedUserNeverVoted = new User("Never Voted");
 		userRepository.deleteAll();
 		userRepository.save(mockedUserJustVoted);
 		userRepository.save(mockedUserVotedYesterday);
 		userRepository.save(mockedUserNeverVoted);
-		// fetch all customers
-		log.info("Customers found with findAll():");
-		log.info("-------------------------------");
-		for (User user : userRepository.findAll()) {
-			log.info(user.toString());
-		}
-		log.info("");
-    }
+		restaurantRepository.deleteAll();
+		mockedRestaurant1 = new Restaurant("Fogo de Chao");
+		restaurantRepository.save(mockedRestaurant1);
+	}
     
     @Test
     public void contextLoads() throws Exception {
@@ -74,19 +75,12 @@ public class ApplicationTest {
     
     @Test
     public void shouldReturnSuccessMessage() throws Exception {
-		
-		/*when(userRepository.findByName("Just Voted")).thenReturn(mockedUserJustVoted);
-		when(userRepository.findByName("Voted Yesterday")).thenReturn(mockedUserVotedYesterday);
-		when(userRepository.findByName("Never Voted")).thenReturn(mockedUserNeverVoted);
-		when(userRepository.findByName("NeverVoted2")).thenReturn(mockedUserNeverVoted2);
-		*///TODO: inserir usuarios de teste no banco, excutar os testes e remove-los?  Mocar dependencias?
-        this.mockMvc.perform(get("/voting?username=Voted Yesterday&restaurantName=Fogo de Chao")).andDo(print()).andExpect(status().isOk())
+		this.mockMvc.perform(get("/voting?username=Voted Yesterday&restaurantName=Fogo de Chao")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Voto registrado com sucesso para o restaurante Fogo de Chao")));
     }
    
     @Test
     public void shouldReturnAlredyVotedMessage() throws Exception {
-		//TODO: inserir usuarios de teste no banco, excutar os testes e remove-los? Mocar dependencias?
         this.mockMvc.perform(get("/voting?username=Just Voted&restaurantName=Fogo de Chao")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Usuario Just Voted ja votou hoje")));
     }
@@ -96,5 +90,41 @@ public class ApplicationTest {
         this.mockMvc.perform(get("/voting?username=NaoExiste&restaurantName=Fogo de Chao")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Usuario NaoExiste nao encontrado no banco de dados")));
     }
+    
+	@Test
+	public void voteTest() throws IOException {
+		try {
+			try {
+				assertTrue(mockedUserJustVoted.getLastVotingDate().isEqual(getCurrentZonedLocalDate()));
+			} catch (AssertionError ae) {
+				Assert.fail();
+			}
+			vc.vote(mockedUserJustVoted, mockedRestaurant1);
+			Assert.fail();
+		} catch (Exception e) {
+			//Expected
+			try {
+				assertTrue(mockedUserJustVoted.getLastVotingDate().isEqual(getCurrentZonedLocalDate()));
+			} catch (AssertionError ae) {
+				Assert.fail();
+			}
+		}
+		
+		try {
+			assertTrue(mockedUserVotedYesterday.getLastVotingDate().isEqual(getCurrentZonedLocalDateMinusDays(1)));
+			vc.vote(mockedUserVotedYesterday, mockedRestaurant1);
+			assertTrue(mockedUserVotedYesterday.getLastVotingDate().isEqual(getCurrentZonedLocalDate()));
+		} catch (Exception e) {
+			Assert.fail();
+		}
+		
+		try {
+			assertTrue(mockedUserNeverVoted.getLastVotingDate().isEqual(LocalDate.of(2000, Month.DECEMBER, 25)));
+			vc.vote(mockedUserNeverVoted, mockedRestaurant1);
+			assertTrue(mockedUserNeverVoted.getLastVotingDate().isEqual(getCurrentZonedLocalDate()));
+		} catch (Exception e) {
+			Assert.fail();
+		}
+	}
 }
 

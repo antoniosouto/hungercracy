@@ -9,7 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+@EnableScheduling
 @SpringBootApplication
 public class Application {
 	
@@ -30,8 +32,7 @@ public class Application {
 			userRepository.save(userJustVoted);
 			userRepository.save(userVotedYesterday);
 			userRepository.save(userNeverVoted);
-			// fetch all customers
-			log.info("Customers found with findAll():");
+			log.info("Users found with findAll():");
 			log.info("-------------------------------");
 			for (User user : userRepository.findAll()) {
 				log.info(user.toString());
@@ -43,19 +44,17 @@ public class Application {
 	@Bean
 	public CommandLineRunner demo2(RestaurantRepository restaurantRepository) {
 		return (args) -> {
-			Restaurant restaurantWonToday = new Restaurant("Churrascaria Sangue na Blusa", getCurrentZonedLocalDate());
-			Restaurant restaurantWonLAstWeek = new Restaurant("Alfacinha", getCurrentZonedLocalDateMinusDays(1));
-			Restaurant restaurantWonLAstWeek2 = new Restaurant("Alfacinha2", getCurrentZonedLocalDateMinusDays(4));
-			Restaurant restaurantWonLAstWeek3 = new Restaurant("Alfacinha3", getCurrentZonedLocalDateMinusDays(7));
+			Restaurant restaurantWonToday = new Restaurant("Churrascaria Sangue na Blusa", 125, false, getCurrentZonedLocalDate());
+			Restaurant restaurantWonLAstWeek = new Restaurant("Alfacinha", 2, false, getCurrentZonedLocalDateMinusDays(2));
+			Restaurant restaurantWonLAstWeek2 = new Restaurant("Alfacinha2", 3, false, getCurrentZonedLocalDateMinusDays(4));
+			Restaurant restaurantWonLAstWeek3 = new Restaurant("Alfacinha3", 4, false, getCurrentZonedLocalDateMinusDays(7));
 			
 			restaurantRepository.deleteAll();
 			restaurantRepository.save(restaurantWonToday);
 			restaurantRepository.save(restaurantWonLAstWeek);
 			restaurantRepository.save(restaurantWonLAstWeek2);
-			restaurantRepository.save(restaurantWonLAstWeek3);
-			
-			// fetch all customers
-			log.info("Customers found with findAll():");
+			restaurantRepository.save(restaurantWonLAstWeek3);			
+			log.info("Restaurants found with findAll():");
 			log.info("-------------------------------");
 			for (Restaurant restaurant : restaurantRepository.findAll()) {
 				log.info(restaurant.toString());

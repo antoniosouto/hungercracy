@@ -31,5 +31,8 @@ public final class DateTimeUtil {
 		return LocalDate.from(getCurrentZonedDateTime()).minusDays(days);
 	}
 	
-
+	public static boolean isPastLocalTime(int hour, int minute) {
+		return ((getCurrentZonedDateTime().getHour() > hour) ||
+				(getCurrentZonedDateTime().getHour() == hour && getCurrentZonedDateTime().getMinute() > minute));
+	}
 }

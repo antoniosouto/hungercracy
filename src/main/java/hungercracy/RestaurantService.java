@@ -8,4 +8,5 @@ public interface RestaurantService {
 	public Restaurant getRestaurantByName(String name);
 	public Restaurant getRestaurantById(Long id);
 	public List<Restaurant> getAllRestaurantsNotYetChoosenThisWeek();
+	public List<Restaurant> getAllRestaurantsNotYetChoosenThisWeekSortedByNameAndByVotes();
 }

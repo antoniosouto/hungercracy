@@ -3,13 +3,10 @@ package hungercracy;
 import java.sql.Date;
 import java.time.LocalDate;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.thymeleaf.util.Validate;
 
@@ -52,21 +49,6 @@ public class User {
 	public void setLastVotingDate(LocalDate lastVotingDate) {
 		Validate.notNull(lastVotingDate, "User lastVotingDate cannot be null");
 		this.lastVotingDate = Date.valueOf(lastVotingDate);
-	}
-	
-	public void vote (final String restaurantName) throws RuntimeException {
-		final LocalDate currentVotingDate = DateTimeUtil.getCurrentZonedLocalDate();
-		if (!currentVotingDate.isEqual(lastVotingDate.toLocalDate())) {
-			setLastVotingDate(currentVotingDate);
-			// TODO: persist the state change in user table
-			// TODO: persist the vote on the restaurant
-		} else {
-			throw new RuntimeException("Usuario " + name + " ja votou hoje!");
-		}
-	}
-	
-	private void persist() throws RuntimeException {
-		// TODO: persist User Object into DB
 	}
 	
 	@Override

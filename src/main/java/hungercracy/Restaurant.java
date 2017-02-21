@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.temporal.IsoFields;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,6 +37,16 @@ public class Restaurant {
 		this.name = name;
 		this.lastDateWon = Date.valueOf(lastDateWon);
 	}
+	
+	public Restaurant(final String name, final Integer votes, final boolean won, final LocalDate lastDateWon) {
+		Validate.notNull(name, "Restaurant name cannot be null");
+		Validate.notNull(lastDateWon, "Restaurant name cannot be null");
+		Validate.notNull(votes, "Restaurant votes cannot be null");
+		this.name = name;
+		this.votes = votes;
+		this.won = won;
+		this.lastDateWon = Date.valueOf(lastDateWon);
+	}
 
 	public String getName() {
 		return name;
@@ -45,6 +54,30 @@ public class Restaurant {
 	
 	public void setName(final String name) {
 		this.name = name;
+	}
+	
+	public Integer getVotes() {
+		return votes;
+	}
+	
+	public void setVotes(int votes) {
+		this.votes = votes;
+	}
+	
+	public void vote() {
+		this.votes++;
+	}
+	
+	public boolean getWon() {
+		return won;
+	}
+	
+	public boolean isWinner() {
+		return won;
+	}
+	
+	public void setWon(final boolean won) {
+		this.won = won;
 	}
 	
 	public LocalDate getLastDateWon() {
@@ -55,7 +88,7 @@ public class Restaurant {
 		this.lastDateWon = Date.valueOf(lastVotingDate);
 	}
 	
-	public boolean notYetChoosenThisWeek() {
+	public boolean alreadyChoosenThisWeek() {
 		 LocalDate now = LocalDate.now();
 		 return !(lastDateWon.toLocalDate().get(IsoFields.WEEK_BASED_YEAR) != now.get(IsoFields.WEEK_BASED_YEAR)
 		      || lastDateWon.toLocalDate().get(IsoFields.WEEK_OF_WEEK_BASED_YEAR) != 

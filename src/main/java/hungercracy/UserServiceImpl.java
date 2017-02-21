@@ -9,22 +9,21 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
 
 	@Autowired
-	private UserRepository UserRepository;
+	private UserRepository userRepository;
 	
 	
 	@Override
 	public List<User> getAllUsers() {
-		return UserRepository.findAll();
+		return userRepository.findAll();
 	}
 
 	@Override
 	public User getUserByName(String name) {
-		return UserRepository.findByName(name);
+		return userRepository.findByName(name);
 	}
 
 	@Override
 	public User getUserById(Long id) {
-		return UserRepository.findOne(id);
+		return userRepository.findOne(id);
 	}	
-
 }
